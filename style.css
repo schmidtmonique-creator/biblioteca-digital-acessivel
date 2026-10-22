@@ -1,0 +1,376 @@
+
+/* Configurações gerais */
+:root {
+    --azul-escuro: #16324f;
+    --azul: #245b8f;
+    --azul-claro: #eaf3fb;
+    --fundo: #f7f9fc;
+    --texto: #243447;
+    --branco: #ffffff;
+    --borda: #d6e0ea;
+    --foco: #f59e0b;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: auto;
+    scroll-padding-top: 1rem;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--texto);
+    background: var(--fundo);
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: var(--azul);
+}
+
+a:focus-visible {
+    outline: 3px solid var(--foco);
+    outline-offset: 4px;
+}
+
+.container {
+    width: min(1120px, 92%);
+    margin-inline: auto;
+}
+
+/* Link para pular a navegação */
+.pular-conteudo {
+    position: absolute;
+    top: -100px;
+    left: 1rem;
+    z-index: 10;
+    padding: 0.75rem 1rem;
+    color: var(--branco);
+    background: var(--azul-escuro);
+}
+
+.pular-conteudo:focus {
+    top: 1rem;
+}
+
+/* Cabeçalho */
+.cabecalho {
+    padding: 3rem 0;
+    color: var(--branco);
+    background: var(--azul-escuro);
+    text-align: center;
+}
+
+.cabecalho h1 {
+    margin: 0 0 0.75rem;
+    font-size: clamp(1.8rem, 4vw, 2.7rem);
+    line-height: 1.25;
+}
+
+.cabecalho p {
+    max-width: 680px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+/* Menu de navegação */
+.menu {
+    background: var(--branco);
+    border-bottom: 1px solid var(--borda);
+}
+
+.menu-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+}
+
+.menu a {
+    display: block;
+    padding: 0.65rem 1rem;
+    border-radius: 6px;
+    color: var(--azul-escuro);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.menu a:hover,
+.menu a:focus-visible {
+    background: var(--azul-claro);
+}
+
+/* Seções */
+.secao {
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+    scroll-margin-top: 1rem;
+}
+
+.secao h2 {
+    margin: 0 0 0.5rem;
+    color: var(--azul-escuro);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    line-height: 1.3;
+}
+
+.introducao {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+/* Cards dos livros */
+.grade-livros {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    align-items: stretch;
+}
+
+.card-livro {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    overflow: hidden;
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+}
+
+.card-livro img {
+    width: 100%;
+    aspect-ratio: 5 / 3;
+    object-fit: cover;
+    background: var(--azul-claro);
+}
+
+.card-conteudo {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.25rem;
+}
+
+.categoria {
+    display: inline-block;
+    padding: 0.2rem 0.65rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.categoria-tecnologia {
+    color: #1e3a8a;
+    background: #dbeafe;
+}
+
+.categoria-literatura {
+    color: #831843;
+    background: #fce7f3;
+}
+
+.categoria-ciencias {
+    color: #065f46;
+    background: #d1fae5;
+}
+
+.categoria-matematica {
+    color: #78350f;
+    background: #fef3c7;
+}
+
+.categoria-historia {
+    color: #5b21b6;
+    background: #ede9fe;
+}
+
+.categoria-desenvolvimento {
+    color: #9a3412;
+    background: #ffedd5;
+}
+
+.card-livro h3 {
+    margin: 0.8rem 0 0.3rem;
+    color: var(--azul-escuro);
+    font-size: 1.25rem;
+    line-height: 1.4;
+}
+
+.card-livro p {
+    margin: 0.4rem 0;
+}
+
+.card-livro .autor {
+    font-size: 0.95rem;
+    font-weight: bold;
+}
+
+/* Botões e links de detalhes */
+.botao {
+    display: inline-block;
+    margin-top: auto;
+    padding: 0.7rem 1rem;
+    border: 2px solid var(--azul);
+    border-radius: 6px;
+    color: var(--branco);
+    background: var(--azul);
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+}
+
+.botao:hover {
+    color: var(--azul-escuro);
+    background: var(--branco);
+}
+
+.detalhe {
+    width: 100%;
+    margin-top: 1rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--borda);
+}
+
+.detalhe h4 {
+    margin-bottom: 0.25rem;
+    color: var(--azul-escuro);
+}
+
+.detalhe p {
+    margin-top: 0;
+}
+
+/* Categorias */
+.grade-categorias {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.card-categoria {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.25rem;
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+    color: var(--texto);
+    background: var(--branco);
+    text-decoration: none;
+}
+
+.card-categoria > span {
+    font-size: 2rem;
+}
+
+.card-categoria h3 {
+    margin: 0.5rem 0 0.25rem;
+    color: var(--azul-escuro);
+    font-size: 1.15rem;
+}
+
+.card-categoria p {
+    margin: 0;
+}
+
+.card-categoria:hover {
+    background: var(--azul-claro);
+    border-color: var(--azul);
+}
+
+/* Sobre o projeto */
+.sobre {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    border-left: 5px solid var(--azul);
+    background: var(--branco);
+}
+
+.sobre p {
+    max-width: 850px;
+}
+
+/* Rodapé */
+.rodape {
+    padding: 2rem 0;
+    color: var(--branco);
+    background: var(--azul-escuro);
+    text-align: center;
+}
+
+.rodape p {
+    margin: 0.4rem 0;
+}
+
+.rodape a {
+    display: inline-block;
+    margin-top: 0.75rem;
+    color: var(--branco);
+    font-weight: bold;
+}
+
+/* Adaptação para tablets e celulares */
+@media (max-width: 900px) {
+    .grade-livros,
+    .grade-categorias {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .cabecalho {
+        padding: 2rem 0;
+    }
+
+    .menu-links {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.25rem;
+    }
+
+    .menu a {
+        text-align: center;
+    }
+
+    .grade-livros,
+    .grade-categorias {
+        grid-template-columns: 1fr;
+    }
+
+    .secao {
+        padding-top: 2rem;
+    }
+
+    .sobre {
+        padding: 1.25rem;
+    }
+
+    .botao {
+        width: 100%;
+        margin-top: 1rem;
+    }
+}
+
+/* Respeita a preferência de movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+    }
+}
